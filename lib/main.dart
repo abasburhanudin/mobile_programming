@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
-import 'ui/pegawai_page.dart';
-  void main() => runApp(MyApp());
+import 'ui/beranda.dart';
+  void main(){
+
+  runApp(const MyApp());
+  }
     class MyApp extends StatelessWidget {
+       const MyApp({super.key});
+
        @override
          Widget build(BuildContext context) {
-           return MaterialApp(
-             title: 'Klinik APP1',
-             debugShowCheckedModeBanner: false,
-               home: PegawaiPage(),
+       return const MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Klinik APP1',
+               home: Beranda(),
                  );
                    } 
                    }

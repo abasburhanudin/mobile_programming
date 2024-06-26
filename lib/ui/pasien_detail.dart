@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
-import 'pegawai_page.dart'; 
-import 'pegawai_update_form.dart';
-import '../model1/pegawai.dart';
+import 'pasien_page.dart'; 
+import 'pasien_update_form.dart';
+import '../model1/pasien.dart';
 
-class PegawaiDetail extends StatefulWidget {
-  final Pegawai pegawai;
+class PasienDetail extends StatefulWidget {
+  final Pasien pasien;
 
-  const PegawaiDetail({super.key, required this.pegawai});
+  const PasienDetail({super.key, required this.pasien});
+
   @override
-  State<PegawaiDetail> createState() => _PegawaiDetailState();
+  State<PasienDetail> createState() => _PasienDetailState();
 }
 
-class _PegawaiDetailState extends State<PegawaiDetail> {
+class _PasienDetailState extends State<PasienDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Detail Pegawai")),
+      appBar: AppBar(title: Text("Detail Pasien")),
       body: Column(
         children: [
           SizedBox(height: 20),
           Text(
-            "Nama Pegawai : ${widget.pegawai.namaPegawai}",
+            "Nama Pasien : ${widget.pasien.namaPasien}",
             style: TextStyle(fontSize: 20),
           ),
           SizedBox(height: 20),
@@ -31,9 +32,9 @@ class _PegawaiDetailState extends State<PegawaiDetail> {
               _tombolHapus(),
             ],
           ),
-SizedBox(height: 20),
+           SizedBox(height: 20),
           Text(
-            "ID Pegawai : ${widget.pegawai.idpegawai}",
+            "ID Pasien : ${widget.pasien.idPasien}",
             style: TextStyle(fontSize: 20),
           ),
           SizedBox(height: 20),
@@ -44,9 +45,9 @@ SizedBox(height: 20),
               _tombolHapus(),
             ],
           ),
-          SizedBox(height: 20),
+           SizedBox(height: 20),
           Text(
-            "NIP : ${widget.pegawai.nip}",
+            "Nomor RM : ${widget.pasien.nomor_rm}",
             style: TextStyle(fontSize: 20),
           ),
           SizedBox(height: 20),
@@ -57,9 +58,9 @@ SizedBox(height: 20),
               _tombolHapus(),
             ],
           ),
-          SizedBox(height: 20),
+           SizedBox(height: 20),
           Text(
-            "Tanggal Lahir : ${widget.pegawai.tanggal_lahir}",
+            "Tanggal Lahir : ${widget.pasien.tanggal_lahir}",
             style: TextStyle(fontSize: 20),
           ),
           SizedBox(height: 20),
@@ -70,9 +71,9 @@ SizedBox(height: 20),
               _tombolHapus(),
             ],
           ),
-          SizedBox(height: 20),
+           SizedBox(height: 20),
           Text(
-            "Nomor Telepon : ${widget.pegawai.nomor_telepon}",
+            "Nomor Telepon : ${widget.pasien.nomor_telepon}",
             style: TextStyle(fontSize: 20),
           ),
           SizedBox(height: 20),
@@ -83,22 +84,9 @@ SizedBox(height: 20),
               _tombolHapus(),
             ],
           ),
-          SizedBox(height: 20),
+           SizedBox(height: 20),
           Text(
-            "Email : ${widget.pegawai.email}",
-            style: TextStyle(fontSize: 20),
-          ),
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              _tombolUbah(),
-              _tombolHapus(),
-            ],
-          ),
-          SizedBox(height: 20),
-          Text(
-            "Password : ${widget.pegawai.password}",
+            "Alamat : ${widget.pasien.alamat}",
             style: TextStyle(fontSize: 20),
           ),
           SizedBox(height: 20),
@@ -120,14 +108,14 @@ SizedBox(height: 20),
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) =>
-                      PegawaiUpdateForm(pegawai: widget.pegawai)));
+                  builder: (context) => PasienUpdateForm(pasien: widget.pasien)));
         },
         style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
         child: const Text("Ubah"));
   }
 
-   _tombolHapus() { 
+
+  _tombolHapus() { 
       return ElevatedButton( 
       onPressed: () { 
         AlertDialog alertDialog = AlertDialog( 
@@ -138,7 +126,7 @@ SizedBox(height: 20),
           onPressed: () { 
           Navigator.pop(context); 
           Navigator.pushReplacement(context, 
-          MaterialPageRoute(builder: (context) => PegawaiPage())); 
+          MaterialPageRoute(builder: (context) => PasienPage())); 
           }, 
         child: const Text("YA"), 
         style: ElevatedButton.styleFrom(backgroundColor: Colors.red), 
